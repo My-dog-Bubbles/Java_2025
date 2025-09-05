@@ -10,6 +10,22 @@ Purpose: Write a java program that wil calculate ticket for 3 customers based on
 import java.util.Scanner;
 
 public class Carmichael_1 {
+    public static String ageVerification(int a) {
+        if (a<0){
+            return "You can't be a negative age?...";
+        } else if (a>=0 && a<=5){
+            return "";
+        } else if (a>5 && a<=12) {
+            return "";
+        } else if (a>12 && a<=17) {
+            return "";
+        } else if (a>17 && a<=59) {
+            return "";
+        } else if (a>59) {
+            return "";
+        }
+    }
+    
     public static void main(String[] args) {
         String name = " ";
         int age = 0;
@@ -26,14 +42,7 @@ public class Carmichael_1 {
 
         System.out.println((name.toLowerCase() == "angel") ? "OMGGGGG!!!!, MY NAME IS ANGEL." : "Cool name");
         
-        if (age<0){
-            System.out.println("You can't be a negative age?...");
-            System.out.print("What is the age of this customer?:");
-            age = keyboard.nextInt();
-            if (age<0){
-            System.out.println("I said you can't be a negative age?...");
-            }
-        }
+        
 
         System.out.println();
 
