@@ -1,65 +1,68 @@
-/*
-
-* Name: Exercise03_01Extra
-
-* Purpose: Test if a fraction is proper or improper
-
-* Programmer: Sham Nemer
-
-* Date: 8 / 27 / 2025
-
-*/
-
 import java.util.Scanner;
 
-// Create the main class
-
 public class tester {
-
-// Using Scanner to get the user input for the numerator and denominator
 
 public static void main(String[] args) {
 
 Scanner userValues = new Scanner(System.in);
-System.out.println("Please enter values for the numerator and the denominator: ");
 
-// Assigning the user input for the numerator and the denominator to variables
+//the input valuea
 
-int numerator = userValues.nextInt();
+//one thing i did differently was using the lowercase function to make it easier 
 
-int denominator = userValues.nextInt();
+//to type the if function 
 
+System.out.print("Enter a letter that correlates to a number: ");
 
+char let = userValues.next().toLowerCase().charAt(0); 
 
-// Running a formula to get the remainder of the numerator divided by the denominator 
+// this if function is pretty long but i used the or function from boolean
 
-int remainder = numerator % denominator;
+//"if it were this, or this, or this, print this"
 
-// Checking if it is improper or proper and outputting if it is and its mixed fraction or reducing if applicable
+// and if they wrote something else i used the else function as an error
 
-if(numerator > denominator && remainder == 0) {
+if (let == 'a' || let == 'b' || let == 'c') {
 
-int quotient = numerator / denominator;
+System.out.println(2);
 
-System.out.println(numerator + " / "+ denominator+ " is a improper fraction and can be reduced to " + quotient);
+} else if (let == 'd' || let == 'e' || let == 'f') {
+
+System.out.println(3);
+
+} else if (let == 'g' || let == 'h' || let == 'i') {
+
+System.out.println(4);
+
+} else if (let == 'j' || let == 'k' || let == 'l') {
+
+System.out.println(5);
+
+} else if (let == 'm' || let == 'n' || let == 'o') {
+
+System.out.println(6);
+
+} else if (let == 'p' || let == 'q' || let == 'r' || let == 's') {
+
+System.out.println(7);
+
+} else if (let == 't' || let == 'u' || let == 'v') {
+
+System.out.println(8);
+
+} else if (let == 'w' || let == 'x' || let == 'y' || let == 'z') {
+
+System.out.println(9);
+
+} else {
+
+System.out.println("Invalid input. Please enter a correct letter.");
 
 }
 
-else if(numerator > denominator && remainder != 0) {
-
-int wholeNum = numerator / denominator;
-
-System.out.println(numerator + " / "+ denominator+ " is an improper fraction and its mixed fraction is " + wholeNum + " + " +
-remainder + " / " + denominator);
-
-}
-
-else {
-
-System.out.println(numerator + " / "+ denominator+ " is a proper fraction!");
+userValues.close();
 
 }
 
 }
 
-}
