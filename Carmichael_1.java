@@ -18,13 +18,13 @@ public class Carmichael_1 {
         } else if (a>=0 && a<=5){
             price = 0.0;
         } else if (a>5 && a<=12) {
-            price = (5+(5*0.05));
+            price = 5;
         } else if (a>12 && a<=17) {
-            price = (8+(8*0.05));
+            price = 8;
         } else if (a>17 && a<=59) {
-            price = (12+(12*0.05));
+            price = 12;
         } else if (a>59) {
-            price = (6+(6*0.05));
+            price = 6;
         }
         return price;
     }
@@ -76,6 +76,7 @@ public class Carmichael_1 {
         /* calls the users ageVerfuction function  to get the price */
         price3 = ageVerification(age3);
 
+        System.out.println();
         /* output customer output */
         System.out.println("Customer 1 Name: " + name1 + "\nCustomer 1 Age: " + age1 + "\nCustomer 1 Ticket Price: $" + price1+"\n");
         System.out.println("Customer 2 Name: " + name2 + "\nCustomer 2 Age: " + age2 + "\nCustomer 2 Ticket Price: $" + price2+"\n");
@@ -84,10 +85,10 @@ public class Carmichael_1 {
         System.out.println("______________________Calculations______________________\n");
         
         /* customer total calculations */
-        System.out.print("Subtotal: ");
-        System.out.println((int)price1+(int)price2+(int)price3);
+        System.out.print("Subtotal: $");
+        System.out.println(price1+price2+price3);
 
-        System.out.print("Total Charge: ");
-        System.out.println((float)price1+price2+price3);
+        System.out.print("Total Charge: $");
+        System.out.println((price1+price2+price3)*1.05);
     }
 }
