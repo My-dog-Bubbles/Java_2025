@@ -2,7 +2,7 @@
 Name: Angel Carmichael
 Class: Period 2
 Created: 9/5/25
-Last Modified: 9/8/2025
+Last Modified: 9/9/2025
 Purpose: Write a java program that wil calculate ticket for 3 customers based on their ages. 
 */
 
