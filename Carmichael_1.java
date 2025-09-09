@@ -13,7 +13,10 @@ public class Carmichael_1 {
 
     /* Function for finding the price based on age range*/
     public static double ageVerification(int a) {
+        /* Declaring a veriable */
         double price = 0.0;
+
+        /* If staments for price based on age(a) */
         if (a<0){
         } else if (a>=0 && a<=5){
             price = 0.0;
@@ -51,7 +54,7 @@ public class Carmichael_1 {
         System.out.print("What is the age of this customer?: ");
         age1 = keyboard.nextInt();
 
-        /* calls the users ageVerfuction function  to get the price */
+        /* calls the users ageVerfuction function to get the price */
         price1 = ageVerification(age1);
         
         System.out.println();
@@ -76,8 +79,12 @@ public class Carmichael_1 {
         /* calls the users ageVerfuction function  to get the price */
         price3 = ageVerification(age3);
 
+<<<<<<< HEAD
         System.out.println();
         /* output customer output */
+=======
+        /* output customer info */
+>>>>>>> 8273952f33f94ee0ebca3a83a2bd437108878758
         System.out.println("Customer 1 Name: " + name1 + "\nCustomer 1 Age: " + age1 + "\nCustomer 1 Ticket Price: $" + price1+"\n");
         System.out.println("Customer 2 Name: " + name2 + "\nCustomer 2 Age: " + age2 + "\nCustomer 2 Ticket Price: $" + price2+"\n");
         System.out.println("Customer 3 Name: " + name3 + "\nCustomer 3 Age: " + age3 + "\nCustomer 3 Ticket Price: $" + price3+"\n");
