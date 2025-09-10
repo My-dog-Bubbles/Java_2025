@@ -79,12 +79,10 @@ public class Carmichael_1 {
         /* calls the users ageVerfuction function  to get the price */
         price3 = ageVerification(age3);
 
-<<<<<<< HEAD
         System.out.println();
-        /* output customer output */
-=======
+
+
         /* output customer info */
->>>>>>> 8273952f33f94ee0ebca3a83a2bd437108878758
         System.out.println("Customer 1 Name: " + name1 + "\nCustomer 1 Age: " + age1 + "\nCustomer 1 Ticket Price: $" + price1+"\n");
         System.out.println("Customer 2 Name: " + name2 + "\nCustomer 2 Age: " + age2 + "\nCustomer 2 Ticket Price: $" + price2+"\n");
         System.out.println("Customer 3 Name: " + name3 + "\nCustomer 3 Age: " + age3 + "\nCustomer 3 Ticket Price: $" + price3+"\n");
