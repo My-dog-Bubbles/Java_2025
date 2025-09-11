@@ -16,7 +16,37 @@ import java.util.*;
 
 public class Exercise05_41 {
     public static void main(String[] args) {
+        /* veriable decalred */
+        int num = 0;
+        int bigNum = 0;
+        int count = 0;
+
         /* scanner creation */
         Scanner keyboard = new Scanner(System.in);
+
+        /* getting the users numbers */
+        System.out.print("Enter numbers: ");
+        String numbers = keyboard.next();
+
+        /* 
+         for loop to iterate through the number string and
+         check if it was greater than the previos num the string
+         */
+        for (int i=0; i<=numbers.length();i++) {
+            System.out.println(i);
+            num = numbers.charAt(i);
+            System.out.println(num);
+            if(num>bigNum) {
+                bigNum = num;
+                System.out.println(bigNum);
+            }
+            if(num==bigNum){
+                count+=1;
+            }
+        }
+
+
+        System.out.println("The largest number is " + bigNum);
+        System.out.println("The occurrence count of the largest number is " + count);
     }
 }
