@@ -20,6 +20,7 @@ public class Exercise05_41 {
         int num = 0;
         int bigNum = 0;
         int count = 0;
+        int i = 0;
 
         /* scanner creation */
         Scanner keyboard = new Scanner(System.in);
@@ -28,25 +29,30 @@ public class Exercise05_41 {
         System.out.print("Enter numbers: ");
         String numbers = keyboard.next();
 
-        /* 
-         for loop to iterate through the number string and
-         check if it was greater than the previos num the string
-         */
-        for (int i=0; i<=numbers.length();i++) {
-            System.out.println(i);
+        /* for loop to iterate through the number string */
+        while (i<numbers.length()) {
             num = numbers.charAt(i);
-            System.out.println(num);
+
+            /* check if it was greater than the previous num the string */
             if(num>bigNum) {
                 bigNum = num;
-                System.out.println(bigNum);
             }
-            if(num==bigNum){
-                count+=1;
+
+            /* add one to the iteration */
+            i++;
+        }
+
+        /* iterate through the number string to see the how many times the biggest number appears */
+        for (i=0; i<numbers.length();i++) {
+            /* check if num is equal to the biggest number */
+            if(numbers.charAt(i)==bigNum) {
+                /* add one to the count list */
+                count++;
             }
         }
 
-
-        System.out.println("The largest number is " + bigNum);
+        /* output for the largest number and the amount it accrues */
+        System.out.println("The largest number is " + (char)bigNum);
         System.out.println("The occurrence count of the largest number is " + count);
     }
 }
