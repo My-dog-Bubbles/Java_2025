@@ -1,48 +1,53 @@
 /*
 
-* Name: Exercise05_41
+ * Christopher Markham
 
-* Purpose: Write a program that reads integers, finds the largest of them, and counts 
-its occurrences.
+ * 9/15/2025
 
-* Programmer: Sham Nemer
+ * Future Investment Computer
 
-* Date: 9 / 8 / 2025
+ * Calculates future investments
 
-*/
-
-// Importing the Scanner class to read user input
+ */
 
 import java.util.Scanner;
 
-// Creating the main class
+ class Main { 
 
-public class tester {
+  public static double futureInvestmentValue(double investmentAmount, double monthlyInterestRate, int years) { 
 
- public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
-    // Asking for user input and initializing variables to store the largest number and its count and the user input
-    System.out.print("Enter integers: ");
-    int numbers = input.nextInt();
-    int max = numbers;
-    int count = 1; 
-    // Using a while to iterate through user input until 0 is entered and check which number is the largest and how many times it occurs
-    while (numbers != 0) {
-        numbers = input.nextInt();
+    double futureInvestment = investmentAmount * Math.pow(1 + monthlyInterestRate,(years * 12)); // The Math calculation
 
-        if (numbers > max) {
-            max = numbers;
-            count = 1;
-        } else if (numbers == max) {
-            count++;
-        }
-    }
-    // Checking that the user entered at least one number other than 0 and printing the results
-    
-        System.out.println("The largest number is 0 because it is the only number entered!");
-        System.out.println("The largest number is " + max);
-        System.out.println("The occurrence count of the largest number is " + count);
-        input.close();
-    }
+    return futureInvestment; 
+
+  } 
+
+  public static void main(String[] args) { 
+
+    Scanner input = new Scanner(System.in); // Get input
+
+     System.out.println("Investment amount: "); 
+
+     String investAmount = input.nextLine(); 
+
+     System.out.println("Annual Interest Rate: "); 
+
+     String interestRate = input.nextLine(); 
+
+     double dInvestAmount = Double.parseDouble(investAmount); // Converts string input to double
+
+     double dInterestRate = Double.parseDouble(interestRate)/1200.0; // Accounts for percentage and year to month conversion
+
+     System.out.println("Years : Future Value"); 
+
+     for (int i = 1; i < 31; i++) { // Runs for the 1-30 years
+
+      double results = futureInvestmentValue(dInvestAmount, dInterestRate, i); // Run method
+
+      System.out.println(i+" : " + results); // Output results
+
+    } 
+
+  } 
+
 }
-
