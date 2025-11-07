@@ -1,0 +1,39 @@
+
+import java.net.URL;
+import java.util.*;
+
+public class scores {
+
+    public static void main(String[] args) {
+        double total = 0.0;
+        double avg = 0.0;
+        int number = 0;
+        int numbers = 0;
+        int lines = 0;
+        URL url;
+
+        try {
+            url = new URL("https://liveexample.pearsoncmg.com/data/Scores.txt");
+            Scanner input = new Scanner(url.openStream());
+
+            while (input.hasNextLine()) {
+                while (input.hasNext()) {
+                    number = input.nextInt();
+                    numbers += 1;
+                    total += numbers;
+                }
+
+                input.nextLine();
+                lines += 1;
+            }
+
+            avg = total / numbers;
+
+        } catch (Exception incorrectURL) {
+            System.out.println("The URL is formatted incorrectly.");
+        }
+
+        System.out.println("Total is " + total);
+        System.out.println("Average is " + avg);
+    }
+}
