@@ -16,23 +16,21 @@ public class scores {
             url = new URL("https://liveexample.pearsoncmg.com/data/Scores.txt");
             Scanner input = new Scanner(url.openStream());
 
-            while (input.hasNextLine()) {
-                while (input.hasNext()) {
+            while (input.hasNext()) {
+                while (input.hasNextLine()) {
                     number = input.nextInt();
                     numbers += 1;
-                    total += numbers;
+                    total += number;
                 }
-
                 input.nextLine();
                 lines += 1;
             }
-
-            avg = total / numbers;
 
         } catch (Exception incorrectURL) {
             System.out.println("The URL is formatted incorrectly.");
         }
 
+        avg = total / numbers;
         System.out.println("Total is " + total);
         System.out.println("Average is " + avg);
     }
