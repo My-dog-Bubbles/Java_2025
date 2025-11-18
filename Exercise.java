@@ -8,27 +8,45 @@ public class Exercise {
         int index = 0;
         int decimal_index = 0;
         long denominator = 1;
-        String decimal_str = "";
+        long numerator = 0;
+        long gcd = 0;
         int decimal;
+        int whole;
+        String decimal_str = "";
+        String whole_str = "";
+
         Scanner keyboard = new Scanner(System.in);
 
         System.out.print("Enter a decimal: ");
-        String decimal_num = keyboard.next();
-        decimal_index = decimal_num.indexOf(".");
+        String num = keyboard.next();
+        decimal_index = num.indexOf(".");
+
+        while (index < decimal_index) {
+            whole_str += num.substring(index, index + 1);
+            index++;
+        }
+        System.out.println(whole_str);
+        whole = Integer.parseInt(whole_str);
 
         index = decimal_index + 1;
-        while (index < decimal_num.length()) {
-            decimal_str += decimal_num.substring(index, index + 1);
+        while (index < num.length()) {
+            decimal_str += num.substring(index, index + 1);
             index++;
         }
 
         decimal = Integer.parseInt(decimal_str);
 
-        while (denominator < decimal) {
+        while (denominator <= decimal) {
             denominator *= 10;
         }
 
         System.out.println(denominator);
+
+        numerator = (denominator * whole) + decimal;
+        System.out.println(numerator);
+
+        Rational idk = new Rational(numerator, denominator);
+        System.out.println(idk.toString());
     }
 }
 
