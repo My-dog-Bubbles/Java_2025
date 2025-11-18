@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Exercise {
 
     public static void main(String[] args) {
+        // variable 
         int index = 0;
         int decimal_index = 0;
         long denominator = 1;
@@ -15,37 +16,45 @@ public class Exercise {
         String decimal_str = "";
         String whole_str = "";
 
+        // So you can scan the keyboard
         Scanner keyboard = new Scanner(System.in);
 
+        // get a number from a user
         System.out.print("Enter a decimal: ");
         String num = keyboard.next();
         decimal_index = num.indexOf(".");
 
+        // It loops the num starting the beginning then ends where th decimal starts
         while (index < decimal_index) {
+            // makes the values a substring 
             whole_str += num.substring(index, index + 1);
             index++;
         }
-        System.out.println(whole_str);
+        // Makes the substring into an integer
         whole = Integer.parseInt(whole_str);
 
         index = decimal_index + 1;
+
+        // It loops the num starting after the decimal to the end of the number
         while (index < num.length()) {
+            // makes the values a substring 
             decimal_str += num.substring(index, index + 1);
             index++;
         }
-
+        // Makes the substring into an integer
         decimal = Integer.parseInt(decimal_str);
 
+        // finds the number place (tenth, hundredth, thousandth, etc) of the decimal and set that to the decimal
         while (denominator <= decimal) {
             denominator *= 10;
         }
 
-        System.out.println(denominator);
-
+        // convert the whole number part of the number to the denominator fraction and adds the decimal part of the number
         numerator = (denominator * whole) + decimal;
-        System.out.println(numerator);
 
+        // makes a new Rational object
         Rational idk = new Rational(numerator, denominator);
+        // Uses the toString method to output the improper fraction
         System.out.println(idk.toString());
     }
 }
