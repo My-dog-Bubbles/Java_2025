@@ -19,27 +19,52 @@ public class test {
     abstract class GeometricObject1 implements Comparable {
 
         // Implement it
-        private int radius = 0;
         private String color = "";
+        private boolean filled;
+        private Date dateCreated;
 
         private GeometricObject1() {
         }
 
         private GeometricObject1(String color, boolean filled) {
             this.color = color;
+            this.filled = filled;
         }
 
-        public int compareTo(GeometricObject1 c1, GeometricObject1 c2) {
-            if (c1.getRadius() < c2.getRadius()) {
-                return c2.getRadius();
+        public abstract Circle1 compareTo(GeometricObject1 c1, GeometricObject1 c2);
+
+        public String getColor() {
+            return this.color;
+        }
+
+        public void setColor(String color) {
+            this.color = color;
+        }
+
+        public boolean isFilled() {
+            if (this.filled == true) {
+                return true;
             } else {
-                return c1.getRadius();
+                return false;
             }
         }
 
-        public int getRadius() {
-            return this.radius;
+        public void setFilled(boolean filled) {
+            this.filled = filled;
         }
+
+        public Date getDateCreated() {
+            return this.dateCreated;
+        }
+
+        public String toString() {
+            String output = "";
+            return output;
+        }
+
+        public abstract double getArea();
+
+        public abstract double getPerimeter();
     }
 
     // Circle.java: The circle class that extends GeometricObject
@@ -47,23 +72,45 @@ public class test {
         // add super clause
 
         // Implement it
-        int radius = 0;
+        private double radius = 0;
+        private String color = "";
+        private boolean filled;
 
         public Circle1() {
         }
 
-        public Circle1(int radius) {
+        public Circle1(double radius) {
             this.radius = radius;
         }
 
+        public Circle1(double radius, String color, boolean filled) {
+            this.radius = radius;
+            this.color = color;
+            this.filled = filled;
+        }
+
+        public double getRadius() {
+            return this.radius;
+        }
+
+        public void setRadius(double radius) {
+            this.radius = radius;
+        }
+
+        public double getDiameter() {
+            double diameter = this.radius * 2;
+            return diameter;
+        }
+
         @Override
-        public int compareTo(GeometricObject1 c1, GeometricObject1 c2) {
-            if (c1.getRadius() < c2.getRadius()) {
+        public Circle1 compareTo(GeometricObject1 c1, GeometricObject1 c2) {
+
+            if (((Circle1) c1).getRadius() < ((Circle1) c2).getRadius()) {
                 System.out.print("The largest circle is Circle 2 with a value of: ");
-                return c2.getRadius();
+                return (Circle1) c2;
             } else {
                 System.out.print("The largest circle is Circle 1 with a value of: ");
-                return c1.getRadius();
+                return (Circle1) c1;
             }
         }
     }
