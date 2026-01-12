@@ -1,16 +1,19 @@
+/*
+Name: Angel Carmichael
+Date: 1/12/26
+Purpose:
+  - Create a file named Exercise17_01.txt if it does not exist
+  - If the file already exists, APPEND new data (don't overwrite)
+  - Write 100 integers created randomly (use Math.random())
+  - Integers should be separated by a space
+  - Use text I/O (PrintWriter)
+*/
 import java.io.*;
 
 /**
- * Exercise 1: Write 100 random integers to a text file
- * 
- * Requirements:
- * - Create a file named Exercise17_01.txt if it does not exist
- * - If the file already exists, APPEND new data (don't overwrite)
- * - Write 100 integers created randomly (use Math.random())
- * - Integers should be separated by a space
- * - Use text I/O (PrintWriter)
- * 
- * @author Your Name
+ * @return 100 integers created randomly
+ * @param Write 100 integers created randomly (use Math.random()) separated by a space in file
+ * @author Angel Carmichael
  */
 public class exercise1_starter {
     
